@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}New company{% endblock %}
+{% block header %} 
+	<h1>Add a new company</h1>
+{% endblock %}
+{% block content %}
+	<form id='form' method='post' enctype='multipart/form-data' action=''>{% csrf_token %}
+		{{form.as_p}}
+		<p><input type='submit' value='Add'/></p>
+	</form>
+{% endblock %}

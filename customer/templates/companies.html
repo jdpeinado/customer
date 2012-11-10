@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %} Register companies {% endblock %}
+
+{% block style_css %}
+{% endblock %}
+
+{% block header %}
+	<h1>Ours Companies</h1>
+{% endblock %}
+
+{% block content %}
+<a href="/company/new">Add a new company</a>
+<ul>
+	{% for item in data %}
+	<li>
+		<a href='{% url clients.views.companies_details item.id %}'>{{item.name}}</a><br>
+		<img src='{{MEDIA_URL}}{{item.image}}'>
+	</li>	
+	{% empty %}
+		<li>There aren't companies</li>
+	{% endfor %}
+</ul>
+{% endblock %}

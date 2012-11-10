@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% comment %} Here you can write comments {% endcomment %}
+
+{% block title %} Home {% endblock %}
+
+{% block style_css %}
+
+{% endblock %}
+
+{% block header %}
+	<h1>Customers</h1>
+{% endblock %}
+
+{% block content %}
+	<p>
+	      At the moment there are:
+	      {% with total=companies.count %}
+		      {{total}} company{{total|pluralize}}
+	      {% endwith %}
+	</p>
+	<ul>
+	{% for item in companies %}
+	<li class="{% cycle 'impar' 'par' %}">	{{item.name}}</li>
+	{% empty %}
+	<li>There aren't still companies</li>
+	{% endfor %}
+	</ul>
+{% endblock %}

@@ -1,0 +1,35 @@
+<header>
+	<nav>
+		<ul>
+			<li><a href='/'>Home</a></li>
+			<li><a href='/users'>Users</a></li>
+			<li><a href='/companies'>Companies</a></li>
+			<li><a href='/about'>About</a></li>
+		</ul>
+	</nav>
+</header>
+<section>
+	<h1>{{company.name}}</h1>
+	<div id='description'>
+		<h2>Description</h2>
+		<p>{{company.description}}</p>
+	</div>
+	<div id='area'>
+		<h2>Area</h2>
+		<p>{{company.area}}</p>
+	</div>
+	<div id='reference'>
+		<img src='{{MEDIA_URL}}{{company.image}}'>
+	</div>
+	<div id='comments'>
+		<h2>Comments</h2>
+		{% for item in comments %}
+			<p>{{item.text}}</p>
+		{% empty %}
+			<p>No comments</p>
+		{% endfor %}
+	</div>
+</section>
+<footer>
+	<p>Register {{company.register_time}} by {{company.user}}</p>
+</footer>

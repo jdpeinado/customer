@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <title>Companies in England - {% block title %}{% endblock %}</title>
+    <link rel='stylesheet' href='{{STATIC_URL}}css/base.css'>
+    <link rel='shortcut icon' href='{{STATIC_URL}}img/icon.png'>
+    {% block style_css %}{% endblock %}
+    <script src='{{STATIC_URL}}js/jquery-1.7.2.min.js'></script>
+    <script src='{{STATIC_URL}}js/demo.js'></script>
+</head>
+<body>
+    <header>
+	{% block header %}{% endblock %}
+	<nav>
+		<ul>
+			<li><a href='/'>Home</a></li>
+			<li><a href='/users'>Users</a></li>
+			<li><a href='/companies'>Companies</a></li>
+			<li><a href='/comment'>Comment</a></li>
+			<li><a href='/about'>About</a></li>
+			<li><a href='/user/new'>New user</a></li>
+			<li><a href='/signin'>Sign in</a></li>
+			<li><a href='/close'>Sign out</a></li>
+			<li><a href='/contact'>Contact us</a></li>
+		</ul>
+	</nav>
+	<hr>
+    </header>
+    <section class='content'>
+	{% block content %}{% endblock %}
+    </section>
+    <footer>
+	<p>Examples Django programming</p>
+    </footer>
+</body>
+

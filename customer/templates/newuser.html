@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}New user{% endblock %}
+{% block header %} 
+	<h1>Registra un nuevo usuario</h1>
+{% endblock %}
+{% block content %}
+	<form id='form' method='post' action=''>{% csrf_token %}
+		<table>{{form}}</table>
+		<p><input type='submit' value='Register'/></p>
+	</form>
+{% endblock %}

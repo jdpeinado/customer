@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %} Users {% endblock %}
+
+{% block header %}
+	<h1>Users</h1>
+{% endblock %}
+
+{% block content %}
+<h1>Users</h1>
+<ul>
+	{% for item in users %}
+	<li>{{item.username|capfirst}} - <em>{{item.email}}</em>
+		<ul>
+			{% for item2 in companies %}
+				{% if item2.user == item %}
+					<li>{{item2}}</li>
+				{% endif %}
+			{% empty %}
+				<li>This user isn't register</li>
+			{% endfor %}
+		</ul>
+	</li>
+	{% empty %}
+		<li>There aren't users</li>
+	{% endfor %}
+</ul>
+{% endblock %}

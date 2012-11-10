@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Welcome{% endblock %}
+{% block header %} 
+	<h1>Welcome</h1>
+{% endblock %}
+{% block content %}
+	<p>Welcome {{user.username|upper}}, 
+		the last time we saw you was {{user.last_login}}.</p>
+	<p>You are a member from {{user.date_joined}}</p>
+{% endblock %}
